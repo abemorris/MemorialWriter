@@ -31,7 +31,16 @@ public class ExcelHelper
         int firstCol = getColumn("First");
         int lastCol = getColumn("Last");
         int noteCol = getColumn("Note");
+       
+        // log to terminal which columns don't exist in the data file
+        if(firstCol == NO_KEYWORD_ERROR)
+            System.out.println("ERROR: No \"First\" column found.");
+        if(lastCol == NO_KEYWORD_ERROR)
+            System.out.println("ERROR: No \"Last\" column found.");
+        if(noteCol == NO_KEYWORD_ERROR)
+            System.out.println("ERROR: No \"Note\" column found.");        
         
+        // declare vars for inside loop
         String firstName;
         String lastName;
         String note;
