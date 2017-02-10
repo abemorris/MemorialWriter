@@ -16,9 +16,9 @@ public class ExcelHelper
     private Sheet sheet;
     private int num_cols;
     
-    public ExcelHelper(String filename) throws IOException, InvalidFormatException
+    public ExcelHelper(File data) throws IOException, InvalidFormatException
     {
-        Workbook wb = WorkbookFactory.create(new File(filename));
+        Workbook wb = WorkbookFactory.create(data);
         sheet = wb.getSheetAt(0);
         getSheetWidth();
         writeSentences();
